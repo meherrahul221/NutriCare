@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriCare – Nutritionist Client Management Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Mobile Top Navigation Bar -->
+    <header class="mobile-header">
+        <div class="brand-wrapper">
+            <div class="brand-icon">N</div>
+            <div class="brand-text">
+                <h1 style="font-size:1.1rem; margin:0;">NutriCare</h1>
+            </div>
+        </div>
+        <button type="button" class="mobile-toggle-btn" id="mobileNavToggle" aria-label="Toggle navigation menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </header>
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+    <div class="app-container">
+        <!-- Dark Charcoal Sidebar -->
+        <aside class="sidebar" id="mainSidebar">
+            <div class="sidebar-header">
+                <div class="brand-wrapper">
+                    <div class="brand-icon">N</div>
+                    <div class="brand-text">
+                        <h1>NutriCare</h1>
+                        <div class="brand-subtitle">Nutrition &amp; Client Care</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="clients.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <span>Clients</span>
+                </a>
+                <a href="consultations.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <span>Consultations</span>
+                </a>
+                <a href="meal-plans.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                    <span>Meal Plans</span>
+                </a>
+                <a href="follow-ups.html" class="nav-item">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Follow-ups</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                &hearts; Nutritionist Workspace
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-wrapper">
+            <div class="content-container">
+
+                <!-- Top Bar -->
+                <header class="top-bar">
+                    <div class="page-intro">
+                        <h1 id="greetingTitle">Good morning, Nutritionist!</h1>
+                        <p>Here's an overview of your clients and their nutrition journey.</p>
+                    </div>
+
+                    <div class="user-profile-meta">
+                        <div class="date-pill">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            <span class="js-current-date">Today</span>
+                        </div>
+                        <div class="profile-badge">
+                            <div class="profile-avatar">EV</div>
+                            <div class="profile-info">
+                                <div class="profile-name">Dr. Elena Vance, RD</div>
+                                <div class="profile-role">Lead Clinical Nutritionist</div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Summary Cards (4 Cards) -->
+                <section class="stats-grid" aria-label="Key Practice Metrics">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                        </div>
+                        <div class="stat-data">
+                            <span class="stat-number" id="statTotalClients">0</span>
+                            <span class="stat-label">Total Clients</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                        </div>
+                        <div class="stat-data">
+                            <span class="stat-number" id="statConsultations">0</span>
+                            <span class="stat-label">Consultations</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+                        </div>
+                        <div class="stat-data">
+                            <span class="stat-number" id="statActiveMealPlans">0</span>
+                            <span class="stat-label">Active Meal Plans</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div class="stat-data">
+                            <span class="stat-number" id="statUpcomingFollowups">0</span>
+                            <span class="stat-label">Upcoming Follow-ups</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tables Split Section: Recent Clients & Upcoming Follow-ups -->
+                <div class="dashboard-split">
+                    <!-- Recent Clients -->
+                    <section class="card-section">
+                        <div class="card-header">
+                            <h2>Recent Clients</h2>
+                            <div class="header-action">
+                                <a href="clients.html" class="btn btn-secondary btn-sm">View All &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Client Name</th>
+                                        <th>Main Goal</th>
+                                        <th>Current Weight</th>
+                                        <th>Last Consultation</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentClientsBody">
+                                    <!-- Populated dynamically via js/script.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Upcoming Follow-ups -->
+                    <section class="card-section">
+                        <div class="card-header">
+                            <h2>Upcoming Follow-ups</h2>
+                            <div class="header-action">
+                                <a href="follow-ups.html" class="btn btn-secondary btn-sm">View All &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Client Name</th>
+                                        <th>Follow-up Date</th>
+                                        <th>Purpose</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="upcomingFollowupsBody">
+                                    <!-- Populated dynamically via js/script.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Quick Actions Section -->
+                <section class="quick-actions-box">
+                    <div class="qa-header">
+                        <h2>Quick Actions</h2>
+                        <span class="qa-tagline">"Healthy choices. Happier you."</span>
+                    </div>
+                    <div class="quick-actions-grid">
+                        <a href="clients.html?action=new" class="quick-action-btn">
+                            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                            <span>Add New Client</span>
+                        </a>
+
+                        <a href="consultations.html?action=new" class="quick-action-btn">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                            <span>Add Consultation</span>
+                        </a>
+
+                        <a href="meal-plans.html?action=new" class="quick-action-btn">
+                            <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="10" y1="12" x2="10" y2="16"></line><line x1="8" y1="14" x2="12" y2="14"></line></svg>
+                            <span>Create Meal Plan</span>
+                        </a>
+
+                        <a href="follow-ups.html?action=new" class="quick-action-btn">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline><line x1="12" y1="8" x2="12" y2="12"></line></svg>
+                            <span>Schedule Follow-up</span>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
